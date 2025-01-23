@@ -1,17 +1,19 @@
-import axios from "axios";
+import axios from 'axios'
 
-export const commonAPI = async (httpMethod, url, reqBody) => {
-    let reqConfig = {
-        method: httpMethod,
+
+export const commonAPI = async(httpMethod,url,reqBody)=>{
+    let reqConfig={
+        method:httpMethod,
         url,
-        headers: {
-            "Content-Type": "application/json"
+        Headers:{
+            "Content-Type":"application/json"
         },
-        data: reqBody
+        data:reqBody
     }
-    return await axios(reqConfig).then((req) => {
+    return await axios(reqConfig).then((req)=>{
         return req
-    }).catch(err => {
+    })
+    .catch(err=>{
         return err
     })
 }

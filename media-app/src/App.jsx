@@ -5,7 +5,10 @@ import { Route, Routes } from 'react-router-dom'
 import Landingpage from './Pages/Landingpage'
 import Home from './Pages/Home'
 import History from './Pages/History'
+
 function App() {
+
+
   return (
     <>
       <Header />
@@ -19,4 +22,7 @@ function App() {
     </>
   )
 }
+
 export default App
+
+

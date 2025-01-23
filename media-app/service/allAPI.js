@@ -1,51 +1,66 @@
-import { commonAPI } from "./commonAPI";
-import { server_url } from "./server_url";
+import { server_url } from "./server_url"
+import {commonAPI} from "./commonAPI"
 
-// upload Video
-export const uploadVideoAPI = async (video) => {
-    return await commonAPI("POST", `${server_url}/allVideos`, video)
+
+//upload video
+
+export const uploadVideoAPI = async(video)=>{
+    return await commonAPI("POST",`${server_url}/allVideos`,video)
 }
 
-// get all videos
-export const getALLuploadVideoAPI = async () => {
-    return await commonAPI("GET", `${server_url}/allVideos`, "")
+//get all video
+
+export const getALLuploadedVideosAPI = async()=>{
+    return await commonAPI("GET",`${server_url}/allVideos`,"")
 }
 
-// get a video
-export const getAVideoAPI = async (id) => {
-    return await commonAPI("POST", `${server_url}/allVideos/${id}`, "")
+//get a video
+
+export const getAVideoAPI = async(id)=>{
+    return await commonAPI("GET",`${server_url}/allVideos/${id}`,"")
 }
 
-// delete a video
-export const deleteVideoAPI = async (id) => {
-    return await commonAPI("DELETE", `${server_url}/allVideos/${id}`, {})
+//delete a video
+
+export const deleteVideoAPI = async(id)=>{
+    return await commonAPI("DELETE",`${server_url}/allVideos/${id}`,{})
 }
 
-// add history
-export const addHistoryAPI = async (video) => {
-    return await commonAPI("POST", `${server_url}/history/`, video)
+//add history
+
+export const addHistoryAPI = async(video)=>{
+    return await commonAPI("POST",`${server_url}/history`,video)
 }
 
-// getHistory
-export const getHistoryAPI = async (id) => {
-    return await commonAPI("GET", `${server_url}/history/${id}`, {})
+//get history
+
+export const getHistoryAPI = async()=>{
+    return await commonAPI("GET",`${server_url}/history`,"")
 }
 
-// delete history
-export const deleteHistoryAPI = async (id) => {
-    return await commonAPI("DELETE", `${server_url}/history/${id}`, {})
+//delete history
+export const deleteHistoryAPI = async(id)=>{
+    return await commonAPI("DELETE",`${server_url}/history/${id}`,{})
 }
 
-// add category
-export const addcategoryAPI = async (category) => {
-    return await commonAPI("POST", `${server_url}/category`, category)
-}
-// get category
-export const getcategoryAPI = async () => {
-    return await commonAPI("GET", `${server_url}/category`, "")
+//add category
+export const addCategoryAPI = async(category)=>{
+    return await commonAPI("POST",`${server_url}/category`,category)
 }
 
-// get category
-export const deletecategoryAPI = async (id) => {
-    return await commonAPI("DELETE", `${server_url}/category/${id}`, {})
+//get category
+export const getCategoryAPI = async()=>{
+    return await commonAPI("GET",`${server_url}/category`,"")
+}
+
+
+//delete category
+export const deleteCategoryAPI = async(id)=>{
+    return await commonAPI("DELETE",`${server_url}/category/${id}`,{})
+}
+
+// updade Category
+
+export const updateCategoryAPI =async(id,categoryDetails)=>{
+    return await commonAPI("PUT",`${server_url}/category/${id}`,categoryDetails)
 }
